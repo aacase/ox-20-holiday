@@ -1,3 +1,5 @@
+Webcam.attach( '#my_camera' );
+
 function preview_snapshot() {
     // freeze camera so user can preview pic
     Webcam.freeze();
