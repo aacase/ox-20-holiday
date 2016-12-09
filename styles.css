@@ -85,13 +85,33 @@ header img {
 
 .mainContent .captureArea {
     width: 80%;
-    height: auto;
+    height: 590px;
     margin: 0 auto;
     padding-top: 30px;
+    position: relative;
 }
+
+.imageContainer{
+    position: relative;
+    height: 100%;
+}
+
+
 
 .captureArea .heroImage {
     width: 100%;
+    height: auto;
+    z-index: 2;
+       position: absolute;
+}
+
+
+.captureArea #globeCamera{
+    position: absolute;
+    z-index: 1;
+    left: 36%;
+    top: 33%;
+    width: 300px;
     height: auto;
 }
 

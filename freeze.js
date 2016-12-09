@@ -1,4 +1,4 @@
-Webcam.attach( '#my_camera' );
+Webcam.attach( '#globeCamera' );
 
 function preview_snapshot() {
     // freeze camera so user can preview pic
