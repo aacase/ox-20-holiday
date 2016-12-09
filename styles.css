@@ -1,27 +1,77 @@
-body{
+/*Charlesmodern font*/
+
+@font-face {
+    font-family: 'CharlesModern';
+    font-weight: normal;
+    font-style: normal;
+    src: url('P-6220301/CharlesModern-Regular.eot');
+    src: url('P-6220301/CharlesModern-Regular.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-Regular.woff') format('woff'), url('P-6220301/CharlesModern-Regular.ttf') format('truetype'), url('P-6220301/CharlesModern-Regular.svg#CharlesModern-Regular') format('svg')
+}
+
+@font-face {
+    font-family: 'CharlesModern';
+    font-weight: normal;
+    font-style: italic;
+    src: url('P-6220301/CharlesModern-Italic.eot');
+    src: url('P-6220301/CharlesModern-Italic.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-Italic.woff') format('woff'), url('P-6220301/CharlesModern-Italic.ttf') format('truetype'), url('P-6220301/CharlesModern-Italic.svg#CharlesModern-Italic') format('svg')
+}
+
+@font-face {
+    font-family: 'CharlesModern';
+    font-weight: bold;
+    font-style: normal;
+    src: url('P-6220301/CharlesModern-Bold.eot');
+    src: url('P-6220301/CharlesModern-Bold.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-Bold.woff') format('woff'), url('P-6220301/CharlesModern-Bold.ttf') format('truetype'), url('P-6220301/CharlesModern-Bold.svg#CharlesModern-Bold') format('svg')
+}
+
+@font-face {
+    font-family: 'CharlesModern';
+    font-weight: bold;
+    font-style: italic;
+    src: url('P-6220301/CharlesModern-BoldItalic.eot');
+    src: url('P-6220301/CharlesModern-BoldItalic.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-BoldItalic.woff') format('woff'), url('P-6220301/CharlesModern-BoldItalic.ttf') format('truetype'), url('P-6220301/CharlesModern-BoldItalic.svg#CharlesModern-BoldItalic') format('svg')
+}
+
+@font-face {
+    font-family: 'CharlesModern';
+    font-weight: 300;
+    font-style: normal;
+    src: url('P-6220301/CharlesModern-Light.eot');
+    src: url('P-6220301/CharlesModern-Light.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-Light.woff') format('woff'), url('P-6220301/CharlesModern-Light.ttf') format('truetype'), url('P-6220301/CharlesModern-Light.svg#CharlesModern-Light') format('svg')
+}
+
+@font-face {
+    font-family: 'CharlesModern';
+    font-weight: 300;
+    font-style: italic;
+    src: url('P-6220301/CharlesModern-LightItalic.eot');
+    src: url('P-6220301/CharlesModern-LightItalic.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-LightItalic.woff') format('woff'), url('P-6220301/CharlesModern-LightItalic.ttf') format('truetype'), url('P-6220301/CharlesModern-LightItalic.svg#CharlesModern-Light') format('svg')
+}
+
+body {
     max-width: 1280px;
     margin: 0 auto;
 }
 
-header{
+header {
     width: 100%;
     height: 76px;
     background-color: #fff;
 }
 
-header img{
+header img {
     display: block;
     margin: 0 auto;
     width: 172px;
     height: auto;
-     position: relative;
+    position: relative;
     top: 50%;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
-.mainContent{
+.mainContent {
     position: relative;
     width: 100%;
     min-height: 1020px;
@@ -29,26 +79,34 @@ header img{
     background-size: cover;
 }
 
-.mainContent .captureArea{
+
+/*Capture Area*/
+
+.mainContent .captureArea {
     width: 80%;
     height: auto;
     margin: 0 auto;
     padding-top: 30px;
 }
 
-.captureArea .heroImage{
+.captureArea .heroImage {
     width: 100%;
     height: auto;
 }
 
+
+/*Instructions*/
+
+
 /*Forest styles*/
-.mainContent .forest{
+
+.mainContent .forest {
     position: absolute;
     bottom: 0px;
     width: 100%;
 }
 
-.forest img{
+.forest img {
     width: 100%;
     height: auto;
 }
