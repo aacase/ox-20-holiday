@@ -115,7 +115,6 @@ header img {
     height: auto;
 }
 
-
 /*Instructions*/
 
 .mainContent .instructions{
@@ -155,3 +154,11 @@ header img {
     width: 100%;
     height: auto;
 }
+
+
+/*Hidden Results Tab for grabbing our image*/
+#results, #photoForMerge, #globeCanvas,#downloadLink{
+    display: none !important;
+}
+
+/*Hidden Canvas element for our merge*/

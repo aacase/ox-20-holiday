@@ -1,3 +1,4 @@
+var init = function(){
 var background = new Image(); //we need to create two images within the canvas
 var photo = new Image(); // here is the second image created
 var ctx = document.getElementById("globeCanvas").getContext("2d"); //this grabs the element line sets it as a two dimentional plane
@@ -7,7 +8,7 @@ var ctx = document.getElementById("globeCanvas").getContext("2d"); //this grabs 
 We do that to ensure that the background image is loaded first, and the second image gets loaded on top*/
 background.onload = function () {
 
-    ctx.drawImage(background, 50, 50, 163, 140);
+    ctx.drawImage(background, 280, 140, 200, 150);
     /* It's counterintuitive, but the webcam photo needs to be the bottom layer. 
      This is because it's easier to smooth the texture of the globe so it looks right. The globe just needs a transparent center
      
@@ -23,22 +24,27 @@ background.onload = function () {
       */
 
 
-    photo.src = "globeTemplate.png" // after background is loaded, load foreground
+    photo.src = "images/heroForMerge.png" // after background is loaded, load foreground
 }
 photo.onload = function () {
-    ctx.drawImage(photo, 0, 0, 300, 200);
+    ctx.drawImage(photo, 0, 0, 768, 432);
     /*once it's done loading, position, like it is explained above. Since this is the foreground
     you don't need to worry about where it is relative to the canvas edges since it's going to take up
     the whole thing. Adjust the width and height to the desired width and height of the downloaded image*/
 }
-background.src = "webcamShot.png"; //this is down here so we don't have to do a messy callback.
+background.src = document.getElementById('savedImage').src; //this is down here so we don't have to do a messy callback.
 
 // Now we need a way to download it
 function downloadCanvas() {
     var globeCanvas = document.getElementById('globeCanvas'); //grab our combined pictures
     var dataURL = globeCanvas.toDataURL("image/png"); //make them a data object, in this case a PNG
-    var link = document.createElement('a'); // make a pseudo link
+    var link = document.getElementById('downloadLink'); // make a pseudo link
     link.download = "snowGlobe.png"; // make a target for the pesudo link and title it what you want
     link.href = globeCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
     link.click(); //click and download it virtually. and you're done!'
 }
+
+setTimeout(function(){ downloadCanvas(); }, 3000);
+}
+
+
