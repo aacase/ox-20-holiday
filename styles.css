@@ -9,4 +9,41 @@ header img{
     margin: 0 auto;
     width: 172px;
     height: auto;
+     position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.mainContent{
+    position: relative;
+    width: 100%;
+    min-height: 1020px;
+    background-image: url(/images/background.png);
+    background-size: cover;
+}
+
+.mainContent .captureArea{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.captureArea .heroImage{
+    width: 100%;
+    height: auto;
+}
+
+/*Forest styles*/
+.mainContent .forest{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.forest img{
+    width: 100%;
+    height: auto;
 }
