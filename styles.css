@@ -51,6 +51,7 @@
 body {
     max-width: 1280px;
     margin: 0 auto;
+    font-family: 'CharlesModern', Arial;
 }
 
 header {
@@ -97,6 +98,30 @@ header img {
 
 /*Instructions*/
 
+.mainContent .instructions{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.instructions h2{
+    font-weight: 500;
+    color: #00A1DF;
+    position: relative;
+}
+
+.instructions h2:after{
+    content: '';
+    margin-top: 5px;
+    height: 4px;
+    max-width: 470px;
+    background: #00A1DF; 
+    display:block;
+}
+
+.step span {
+    font-weight: 500;
+    color: #006892;
+}
 
 /*Forest styles*/
 
