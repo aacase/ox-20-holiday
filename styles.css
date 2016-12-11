@@ -102,7 +102,7 @@ header img {
     width: 100%;
     height: auto;
     z-index: 2;
-       position: absolute;
+    position: absolute;
 }
 
 
@@ -162,3 +162,43 @@ header img {
 }
 
 /*Hidden Canvas element for our merge*/
+@media  (min-width: 750px) and (max-width: 850px) {
+  .captureArea   #globeCamera {
+        top: 20%;
+    }
+  #globeCamera  video{
+    width: 200px !important;
+    height: auto !important;
+  }
+}
+
+
+@media (min-width: 851px) and (max-width: 950px) {
+  .captureArea   #globeCamera {
+        top: 23%;
+    }
+  #globeCamera  video{
+    width: 210px !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 951px) and (max-width: 1050px) {
+  .captureArea   #globeCamera {
+        top: 25%;
+    }
+  #globeCamera  video{
+    width: 220px !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 1051px) and (max-width: 1150px) {
+  .captureArea   #globeCamera {
+        top: 25%;
+    }
+  #globeCamera  video{
+    width: 220px !important;
+    height: auto !important;
+  }
+}

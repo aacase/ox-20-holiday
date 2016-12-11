@@ -1,4 +1,5 @@
-Webcam.attach( '#globeCamera' );
+
+Webcam.attach('#globeCamera');
 
 function preview_snapshot() {
     // freeze camera so user can preview pic
@@ -25,4 +26,4 @@ function save_photo_for_merge() {
         // document.getElementById('pre_take_buttons').style.display = '';
         // document.getElementById('post_take_buttons').style.display = 'none';
     });
-}
+}           
