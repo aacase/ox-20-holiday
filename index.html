@@ -11,42 +11,121 @@
 </head>
 
 <body>
-<header>
-  <img src="images/logo.svg" alt="optionsXpress">
-</header>
-<section class="mainContent">
-  <div class="captureArea">
-    <div class="imageContainer">
-      <div id="globeCamera" style="width: 270px; height: 203px;"></div>
-    <img class="heroImage" src="images/hero.png" alt="">
-    
+  <header>
+    <img src="images/logo.svg" alt="optionsXpress">
+  </header>
+  <section class="mainContent">
+    <div class="captureArea">
+      <div class="imageContainer">
+        <div id="globeCamera" style="width: 270px; height: 203px;"></div>
+        <img class="heroImage" src="images/hero.png" alt="">
+      </div>
     </div>
-  </div>
-  <button onclick='preview_snapshot();'></button>
-  <button onclick="save_photo_for_merge();">Save</button>
-  <button onclick="init();"></button>
-  <div class="instructions">
-    <h2>4 Steps to Going Global with optionsXpress</h2>
-    <div class="step"><span>1) Click the button </span>to activate your mobile device or computer’s camera.</div>
-    <div class="step"><span>2) Frame your face </span>within the globe as the camera counts down.</div>
-    <div class="step"><span>3) Save your photo </span>and share it through social media or email.</div>
-    <div class="step"><span>4) Have a happy holiday!</span></div>
-  </div>
-  <div class="forest">
-    <img src="images/forest.svg" alt="">
-  </div>
-</section>
+    <div class="instructionsContainer">
+      <div class="instructions">
+        <h2>4 Steps to Going Global with optionsXpress</h2>
+        <div class="step"><span>1) Click the button </span>to activate your mobile device or computer’s camera.</div>
+        <div class="step"><span>2) Frame your face </span>within the globe as the camera counts down.</div>
+        <div class="step"><span>3) Save your photo </span>and share it through social media or email.</div>
+        <div class="step"><span>4) Have a happy holiday!</span></div>
+      </div>
+      <div class="captureButtons">
+        <!--<button onclick='preview_snapshot();'></button>
+        <button onclick="save_photo_for_merge();">Save</button>
+        <button onclick="init();"></button>-->
+        <img class='takePhoto' src="images/takePhoto.svg" alt="">
+        <div class="postPhoto">
+          <img class='savePhoto' src="images/save.svg" alt="">
+          <img class='retakePhoto' src="images/retake.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <!--Mobile Version here-->
+    <div class="mobileSlide1">
+    <div class="mobileInstructions">
+      <h2>4 Steps to Going Global with optionsXpress</h2>
+      <div class="step"><span>1</span></div>
+      <div class="step"><span>Click the button </span>to activate your mobile device or computer’s camera.</div>
+      <br>
+      <div class="step"><span>2</span></div>
+      <div class="step"><span>Frame your face </span>within the globe as the camera counts down.</div>
+      <br>
+      <div class="step"><span>3</span></div>
+      <div class="step"><span>Save your photo </span>and share it through social media or email.</div>
+      <br>
+      <div class="step"><span>4</span></div>
+      <div class="step"><span>Have a happy holiday!</span></div>
+    </div>
+    <div class="mobileCapture">
+      <input type="file" accept="image/*" capture="camera" id="camera">
+      
 
-<!--hidden results div that the merge function uses-->
+    </div>
+    </div>
+    <div class="mobileSlide2">
+     <div class="mobileGlobe">
+       <img class='mobileForeground' src="images/mobileGlobe.png" alt="">
+       <img id="frame" alt="">
+     </div>
+      
+    </div>
+    <div class="forest">
+      <img src="images/forest.svg" alt="">
+    </div>
+  </section>
+  <!--hidden results div that the merge function uses-->
   <div id="results"></div>
-  <canvas id="globeCanvas" width='768' height= '452' style='width:768px; height: 432;'></canvas>
+  <canvas id="globeCanvas" width='768' height='452' style='width:768px; height: 432;'></canvas>
   <div id="photoForMerge"><img src="images/heroForMerge.png" alt=""></div>
   <a id="downloadLink"> dl me</a>
-<section class="disclosure"></section>
-<script src="webcam.min.js"> </script>
-<script src="freeze.js"></script>
-<script src="combineImages.js"></script>
+  <section class="disclosure"></section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
 
+  if ( $.browser.msie) {
+  alert( "In internet Explorer you must click allow on the webcam popup, then close, and then doubleclick anywhere on that popup" );
+}
+  $('#globeCamera').on('click', function(){
+    $('#globeCamera').addClass('zindexBelow');
+  })
+
+  $('.takePhoto').on('click', function(){
+   preview_snapshot();
+   $(this).hide();
+   $('.postPhoto').show();
+  })
+
+  $('.retakePhoto').on('click', function(){
+  Webcam.unfreeze()
+   $('.postPhoto').hide();
+   $('.takePhoto').show();
+  })
+
+
+  $('.savePhoto').on('click', function(){
+    save_photo_for_merge();
+    init();
+  })
+
+  
+</script>
+  <script src="webcam.min.js"> </script>
+  <script src="freeze.js"></script>
+  <script src="combineImages.js"></script>
+
+        <script>
+  var camera = document.getElementById('camera');
+  var frame = document.getElementById('frame');
+
+  camera.addEventListener('change', function(e) {
+    var file = e.target.files[0]; 
+    // Do something with the image file.
+  
+    $('.mobileSlide1').hide();
+    $('.mobileSlide2').show();
+      frame.src = URL.createObjectURL(file);
+  });
+</script>
 </body>
 
 </html>

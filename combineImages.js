@@ -44,7 +44,7 @@ function downloadCanvas() {
     link.click(); //click and download it virtually. and you're done!'
 }
 
-setTimeout(function(){ downloadCanvas(); }, 3000);
+setTimeout(function(){ downloadCanvas(); }, 500);
 }
 
 

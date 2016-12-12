@@ -48,6 +48,13 @@
     src: url('P-6220301/CharlesModern-LightItalic.eot?') format('embedded-opentype'), url('P-6220301/CharlesModern-LightItalic.woff') format('woff'), url('P-6220301/CharlesModern-LightItalic.ttf') format('truetype'), url('P-6220301/CharlesModern-LightItalic.svg#CharlesModern-Light') format('svg')
 }
 
+  .mobileCapture{
+        display: none;
+    }
+    .mobileSlide2{
+        display: none;
+    }
+
 body {
     max-width: 1280px;
     margin: 0 auto;
@@ -75,11 +82,10 @@ header img {
 .mainContent {
     position: relative;
     width: 100%;
-    min-height: 1020px;
-    background-image: url(/images/background.png);
+ 
+    background-image: url(./images/backgroundsnow.png);
     background-size: cover;
 }
-
 
 /*Capture Area*/
 
@@ -116,12 +122,47 @@ header img {
 }
 
 /*Instructions*/
-
+.mainContent .instructionsContainer{
+ width: 80%;
+ height: 200px;
+ position: relative;
+ margin: 0 auto;
+ margin-bottom: 20px;
+}
 .mainContent .instructions{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
+    float: left;
+}
+.mobileInstructions{
+    display: none;
 }
 
+.mainContent .captureButtons{
+    width: 30%;
+    margin: 0 auto;
+    
+    float: left;
+}
+
+.captureButtons .takePhoto{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top:0.83em;
+}
+.captureButtons .postPhoto{
+    display: none;
+    width: 100%;
+    height: auto;
+}
+.postPhoto img{
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: right;
+    margin-bottom: 10px;
+}
 .instructions h2{
     font-weight: 500;
     color: #00A1DF;
@@ -145,7 +186,7 @@ header img {
 /*Forest styles*/
 
 .mainContent .forest {
-    position: absolute;
+    position: relative
     bottom: 0px;
     width: 100%;
 }
@@ -163,6 +204,12 @@ header img {
 
 /*Hidden Canvas element for our merge*/
 @media  (min-width: 750px) and (max-width: 850px) {
+          .mainContent .captureArea {
+      height: 400px;
+  }
+  h2{
+      margin-top: 0;
+  }
   .captureArea   #globeCamera {
         top: 20%;
     }
@@ -174,6 +221,9 @@ header img {
 
 
 @media (min-width: 851px) and (max-width: 950px) {
+          .mainContent .captureArea {
+      height: 450px;
+  }
   .captureArea   #globeCamera {
         top: 23%;
     }
@@ -184,6 +234,7 @@ header img {
 }
 
 @media (min-width: 951px) and (max-width: 1050px) {
+
   .captureArea   #globeCamera {
         top: 25%;
     }
@@ -194,6 +245,10 @@ header img {
 }
 
 @media (min-width: 1051px) and (max-width: 1150px) {
+  .mainContent .captureArea {
+      height: 500px;
+  }
+  
   .captureArea   #globeCamera {
         top: 25%;
     }
@@ -201,4 +256,84 @@ header img {
     width: 220px !important;
     height: auto !important;
   }
+}
+
+
+/*mobile version*/
+
+@media (max-width: 749px){
+    .captureArea{
+        display: none;
+    }
+    .mobileCapture{
+        display: block;
+    }
+    .mainContent .captureButtons{
+        display: none;
+    }
+    .mainContent .instructionsContainer{display: none;}
+    .mainContent .mobileInstructions{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    float: left;
+}
+    .mainContent .mobileInstructions .step{
+        width: 100%;
+        text-align: center;
+
+} 
+.mobileInstructions h2{
+    font-weight: 500;
+    color: #00A1DF;
+    position: relative;
+}
+
+.mobileInstructions h2:after{
+    content: '';
+    margin-top: 5px;
+    height: 4px;
+    max-width: 470px;
+    background: #00A1DF; 
+    display:block;
+}
+.mobileSlide2{
+    display: none;
+}
+.mobileGlobe{
+    position: relative;
+    height: 90vh;
+    width: 100%;
+}
+.mobileGlobe .mobileForeground{
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+}
+
+.mobileGlobe #frame{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+/*ieHack to enable flash capture*/
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     .captureArea #globeCamera{
+    position: absolute;
+    z-index: 4;
+    left: 36%;
+    top: 33%;
+    width: 300px;
+    height: auto;
+}
+.zindexBelow{
+    z-index: 1 !important;
+}
 }
