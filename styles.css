@@ -211,7 +211,7 @@ header img {
       margin-top: 0;
   }
   .captureArea   #globeCamera {
-        top: 20%;
+        top: 29%;
     }
   #globeCamera  video{
     width: 200px !important;
@@ -225,7 +225,7 @@ header img {
       height: 450px;
   }
   .captureArea   #globeCamera {
-        top: 23%;
+        top: 26%;
     }
   #globeCamera  video{
     width: 210px !important;
@@ -250,7 +250,8 @@ header img {
   }
   
   .captureArea   #globeCamera {
-        top: 25%;
+        top: 34%;
+        left: 38%;
     }
   #globeCamera  video{
     width: 220px !important;
@@ -327,7 +328,7 @@ header img {
      /* IE10+ CSS styles go here */
      .captureArea #globeCamera{
     position: absolute;
-    z-index: 4;
+    z-index: 4 !important;
     left: 36%;
     top: 33%;
     width: 300px;
