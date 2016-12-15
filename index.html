@@ -58,17 +58,24 @@
     </div>
     <div class="mobileCapture">
       <input type="file" accept="image/*" capture="camera" id="camera">
-      
+     
 
     </div>
     </div>
     <div class="mobileSlide2">
      <div class="mobileGlobe">
        <img class='mobileForeground' src="images/mobileGlobe.png" alt="">
+  
        <img id="frame" alt="">
-     </div>
+        
       
+      
+     </div>
+      <img class='mobileRetake' src="images/retake.svg" style="z-index:2;"></img>
+        <img class='mobileSave' onclick="mobileInit();" src="images/save.svg" style="z-index:2;"></img>
+    
     </div>
+         
     <div class="forest">
       <img src="images/forest.svg" alt="">
     </div>
@@ -76,6 +83,7 @@
   <!--hidden results div that the merge function uses-->
   <div id="results"></div>
   <canvas id="globeCanvas" width='768' height='452' style='width:768px; height: 432;'></canvas>
+  <canvas id="mobileCanvas" width='375' height='667' style='width:768px; height: 432;'></canvas>
   <div id="photoForMerge"><img src="images/heroForMerge.png" alt=""></div>
   <a id="downloadLink"> dl me</a>
   <section class="disclosure"></section>
@@ -112,6 +120,7 @@
   <script src="webcam.min.js"> </script>
   <script src="freeze.js"></script>
   <script src="combineImages.js"></script>
+   <script src="combineImagesMobile.js"></script>
 
         <script>
   var camera = document.getElementById('camera');
@@ -125,6 +134,10 @@
     $('.mobileSlide2').show();
       frame.src = URL.createObjectURL(file);
   });
+
+ $('.mobileRetake').on('click', function(){
+   $('#camera').click();
+ })
 </script>
 <script>
   // Get IE or Edge browser version
